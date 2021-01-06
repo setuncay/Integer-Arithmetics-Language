@@ -16,12 +16,12 @@ statement:
 // <variable name="a" value="5" />
 // <variable name="a"  />
 varStatement:
-              '<variable'  nameAttribute (valueAttribute)? '/>'
+              '<var'  nameAttribute (valueAttribute)? '/>'
               ;
 
 // <addStatement n1="a" n2="b" to="c" />
 addStatement:
-             '<addStatement' n1Attribute n2Attribute toAttribute'/>'
+             '<add' n1Attribute n2Attribute toAttribute'/>'
              ;
 
 // <print n="d" />
