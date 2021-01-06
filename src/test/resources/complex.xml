@@ -1,0 +1,34 @@
+<program>
+    <var name="a" value="5" />
+    <var name="b" value="6" />
+    <var name="c" />
+    <var name="d" />
+    <var name="e" />
+    <var name="f" />
+    <var name="g" />
+    <var name="h" />
+    <var name="i" />
+    <var name="j" />
+    <var name="l" />
+    <var name="m" />
+    <var name="n" />
+    <add n1="a" n2="b" to="c" />
+    <add n1="c" n2="3" to="d" />
+    <add n1="d" n2="4" to="e" />
+    <add n1="e" n2="5" to="f" />
+    <add n1="f" n2="6" to="g" />
+    <add n1="g" n2="7" to="h" />
+    <add n1="h" n2="8" to="i" />
+    <add n1="i" n2="9" to="j" />
+    <add n1="j" n2="10" to="l" />
+    <print n="e" />
+    <print n="f" />
+    <print n="g" />
+    <print n="h" />
+    <print n="i" />
+    <print n="j" />
+    <print n="l" />
+    <print n="m" />
+    <print n="n" />
+    <print n="d" />
+</program>

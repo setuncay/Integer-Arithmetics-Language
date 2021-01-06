@@ -1,0 +1,6 @@
+<program>
+    <var name="a" value="5"/>
+    <var name="c"/>
+    <add n1="f" n2="a" to="c"/>
+    <print n="c"/>
+</program>
