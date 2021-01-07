@@ -100,7 +100,7 @@ public class ArithmeticExecutor {
         final List<CompilationError> errors = Lists.newArrayList();
         for (PrintStatement printStatement : printStatementStatements) {
             if (printStatement.getVariable() == null) {
-                errors.add(InterpretationError.fromToken(printStatement.getToken(), "to references an undefined variable", programName));
+                errors.add(InterpretationError.fromToken(printStatement.getToken(), "print references an undefined variable", programName));
             }
         }
         return errors;

@@ -131,4 +131,18 @@ public class ArithmeticExecutorTest {
         assertEquals(result.getLeft().get(0).getDetailMessage(), "to references an undefined variable");
         assertEquals(result.getLeft().get(0).getSourceName(), "add_statement_references_undefined_variable_3.xml");
     }
+
+    @Test
+    public void displayErrorWhenPrintReferencesAnUnDefinedVariable() throws FileNotFoundException {
+        // Given
+        File sourceFileWithSyntaxErrors = ResourceUtils.getFile("classpath:print-undefined.xml");
+        // When
+        final Either<List<CompilationError>, List<Output>> result = executor.run(sourceFileWithSyntaxErrors);
+        // Then
+        assertTrue(result.isLeft());
+        assertEquals(result.getLeft().get(0).getLineNumber(), 6);
+        assertEquals(result.getLeft().get(0).getCharAt(), 4);
+        assertEquals(result.getLeft().get(0).getDetailMessage(), "print references an undefined variable");
+        assertEquals(result.getLeft().get(0).getSourceName(), "print-undefined.xml");
+    }
 }

@@ -32,15 +32,54 @@ An interpreter, preferably in Java  for a simple XML-based programming language 
 ## Scenarios
 
 See unit tests, in particular ArithmeticExecutorTest, that cover various cases including unhappy execution paths like syntax errors, undefined variable references etc.
-These tests use sample source files placed under test/resources.
+These tests use sample source files placed under src/test/resources.
 
-* Example
+* Examples
+
+These examples are using sample source files under src/test/resources
 
 `java -jar IntegerArithmetic-1.0-SNAPSHOT.jar ../src/test/resources/add_statement_references_undefined_variable_3.xml `
 
-should yield:
+will yield:
 
 `Interpretation Error: add_statement_references_undefined_variable_3.xml (4,4) to references an undefined variable`
 
 as add_statement_references_undefined_variable_3.xml contains an 'add' statement on line 4 is referencing an undefined variable.
 
+***
+
+`java -jar IntegerArithmetic-1.0-SNAPSHOT.jar ../src/test/resources/source1.xml `
+
+will yield
+
+11
+
+as contents of source1.xml is:
+
+    <program>
+        <var name="a" value="5"/>
+        <var name="b" value="6"/>
+        <var name="c"/>
+        <add n1="a" n2="b" to="c"/>
+        <print n="c"/>
+    </program>
+***
+
+Multiple 'print' statements are supported and if the value of the variable that is 'printed' not initialised, then the corresponding output will be null
+
+For instance:
+
+`java -jar IntegerArithmetic-1.0-SNAPSHOT.jar ../src/test/resources/complex.xml`
+
+will yield:
+
+    18
+    23
+    29
+    36
+    44
+    53
+    63
+    null
+    null
+    14
